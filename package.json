@@ -3,6 +3,11 @@
   "displayName": "",
   "description": "N8's Snippets",
   "version": "1.0.0",
+  "publisher": "nathanspencer1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathanspencer1/n8snippets"
+  },
   "engines": {
     "vscode": "^1.79.0"
   },
