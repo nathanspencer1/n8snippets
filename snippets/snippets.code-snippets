@@ -1,0 +1,71 @@
+{
+  "useState()": {
+    "prefix": "us",
+    "body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<$2>($3);$0"],
+    "description": "useState()",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "useEffect() Async": {
+    "prefix": "uea",
+    "body": [
+      "useEffect(() => {",
+      "  const controller = new AbortController();",
+      "  (async () => {",
+      "    await ${1:asyncFunction}(${2:dependant}).then((_${3:data}) => set${3/(.*)/${1:/capitalize}/}(_${3:data} ?? []));",
+      "  })();",
+      "  return () => {",
+      "    controller.abort();",
+      "  };",
+      "}, [${2:dependant}]);"
+    ],
+    "description": "A useEffect for setting state data asynchronously.",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "useEffect() Async Loading": {
+    "prefix": "ueal",
+    "body": [
+      "useEffect(() => {",
+      "  const controller = new AbortController();",
+      "  (async () => {",
+      "    setLoading(true);",
+      "    await ${1:asyncFunction}(${2:dependant}).then((_${3:data}) => set${3/(.*)/${1:/capitalize}/}(_${3:data} ?? []));",
+      "    setLoading(false);",
+      "  })();",
+      "  return () => {",
+      "    controller.abort();",
+      "  };",
+      "}, [${2:dependant}]);"
+    ],
+    "description": "A useEffect for setting state data asynchronously with loading state.",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "FunctionalComponent.ts": {
+    "prefix": "fc",
+    "body": [
+      "",
+      "export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}}(): JSX.Element {",
+      "  return (",
+      "    <div>${1:first}</div>",
+      "  )",
+      "}"
+    ],
+    "description": "Creates a React Functional Component with TypeScript interface.",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "FunctionalComponentWithProps.ts": {
+    "prefix": "fcp",
+    "body": [
+      "",
+      "interface ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}}Props {$0}",
+      "",
+      "export default function ${1:first}(props: ${1:first}Props): JSX.Element {",
+      "  const {} = props;",
+      "  return (",
+      "    <div>${1:first}</div>",
+      "  )",
+      "}"
+    ],
+    "description": "Creates a React Functional Component and properties with TypeScript interface.",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  }
+}
