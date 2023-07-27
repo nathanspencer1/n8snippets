@@ -1,13 +1,14 @@
 {
   "name": "n8snippets",
-  "displayName": "",
+  "displayName": "n8snippets",
   "description": "N8's Snippets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "nathanspencer1",
   "repository": {
     "type": "git",
     "url": "https://github.com/nathanspencer1/n8snippets"
   },
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.79.0"
   },

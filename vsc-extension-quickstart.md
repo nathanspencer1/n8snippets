@@ -21,3 +21,30 @@
 
 * To start using your extension with Visual Studio Code copy it into the `<user home>/.vscode/extensions` folder and restart Code.
 * To share your extension with the world, read on https://code.visualstudio.com/docs about publishing an extension.
+
+## Resources
+
+* [YOUTUBE | Traversy Media - Creating A Simple VSCode Extension](https://youtu.be/srwsnNhiqv8)
+* [Visual Studio Code | Your First Extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+* [Visual Studio Code | Publishing Extensions](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
+
+## Packaging
+
+The extension is packaged using `vsce`, short for "Visual Studio Code Extensions". To package run:
+```shell
+vsce package
+```
+Note that you may need to update the path for `vsce` to be recognized. Adjust path values as needed.
+```shell
+IF EXIST C:\Users\nathanspencer\AppData\Roaming\npm SET PATH=%PATH%;C:\Users\nathanspencer\AppData\Roaming\npm
+```
+Packaging will create a .vsix file that can then be published.
+
+## Publishing
+
+Published extension can be managed at https://marketplace.visualstudio.com/manage/publishers/nathanspencer1.
+You can also publish from terminal with:
+```shell
+vsce publish
+```
+
